@@ -1,0 +1,58 @@
+
+	MAYBE NEXT TIME!!
+	-- game concept--
+
+Idea:
+You empersonate a selfish middle eastern Zar in south gambia trying to build up your petty dynasty, meet your infantile needs and survive your ungrateful citizens' riots. 
+
+Tags:
+Round based, strategic, build-up, tower-defense
+
+Gameplay:
+- Each round you do one action, then your stupid-ass citizens get closer to
+  your Alhambra and finally a random(?) event happens, or doesn't. The
+  actions you can do each round are:
+  - Choose 1 out of 5 randomly(?) presented buildings and add it to your
+    majestic Empire.
+  - Allow foreigners to settle in your blessed lands (who immediately
+    turn into rioters obviously).
+  - Pass (to increase interest).
+
+Map:
+Your residence is errected on a 5x5 grid of squares. It can be increased
+later on during gameplay. Each building occupies one field. Rioters spawn
+outside of vision range (5 maybe?) and move one field per round.
+
+Mechanics:
+
+- Building:
+  - 5 buildings are randomly presented to you every round. They have
+    different costs. You can only buy one. Independent from your choice
+    to buy one or not to buy any, you can choose 1 building to be presented
+    to you again next round.
+  - If you buy a building that you are not able to add to your Castle just
+    now, you can store it away and use a turn later in game to add it.
+  - Gardens must be connected to Gemächer or similar rules (etc.)
+  - Some buildings already have some walls around it. They must fit
+    into your Palast as in the boardgame Alhambra.
+  - Beyond a certain board-size you need to make space for building. Your
+    citizens are allowed to break down their houses to make space for your
+    highness. Depending on the citizen's status bad things can happen.
+
+- Satisfy needs:
+  - Gardens increase your ERHOLUNG
+  - Gemächer increase your VERGNÜGEN
+  - Pavilions increase your SOZIALE KONTAKTE
+  - To stifle riots increases your STOLZ. -> Türme help you beat down riots.
+  - Serails increase your crave for MACHT
+  - Arkaden increase your REICHTÜMER
+
+- Interconnectivity:
+  - SOZIALE KONTAKTE increases chance of good random events.
+  - Too much STOLZ becomes ARROGANZ and lowers SOZIALE KONTAKTE and
+    increases riot spawn rate.
+  - If STOLZ is too low, bad things (?) happen.
+  - 
+
+
+
