@@ -5,7 +5,7 @@ from world import World
 from shop import Shop
 from stats import Stats
 
-BLACK = (0,0,0)
+BLACK = (0, 0, 0)
 
 MODE_IDLE = 0
 MODE_PLACE_CARD = 1
