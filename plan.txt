@@ -52,7 +52,18 @@ Mechanics:
   - Too much STOLZ becomes ARROGANZ and lowers SOZIALE KONTAKTE and
     increases riot spawn rate.
   - If STOLZ is too low, bad things (?) happen.
-  - 
+
+- Besuche:
+  - Je höher SOZIALE KONTAKTE, desto wahrscheinlicher werden zufällige Besuche.
+  - Bei einem Besuch kommt eine Person und nimmt Einfluss auf den Spieler.
+  - Mögliche Besucher:
+    - Ein zypriotischer Zar bewundert deine Gärten. +GELD für deine Gärten.
+    - Ein lettischer Lord kommt in einem Ford angefahren und vergnügt sich
+      in deinen Gemächern. +GELD für deine Gemächer.
+    - Ein böhmischer Baron ...?
+    - Ein kasachischer Kaiser schenkt dir eine Karte.
+    - Ein isländischer Imperator verbessert die Reichweite deiner Türme.
+    - Ein sächsischer Sultan besucht dich. Aus Wut zerstört er eines deiner Gebäude.
 
 
 
