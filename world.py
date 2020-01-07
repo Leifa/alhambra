@@ -7,7 +7,7 @@ class World:
         self.width = width
         self.height = height
         self.map = [[Card(Card.TYPE_EMPTY) for x in range(0, height)] for y in range(0, width)]
-        self.map[3][3] = Card(Card.TYPE_SERAIL)
+        self.map[4][4] = Card(Card.TYPE_SERAIL)
 
     def does_card_fit(self, card, x, y):
         # Coordinates out of bounds never fit

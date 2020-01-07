@@ -1,7 +1,7 @@
 import pygame
 from card2 import Card
 
-TILESIZE = 64
+TILESIZE = 56
 
 GREEN = (100, 200, 100)
 RED = (200, 100, 100)
@@ -10,7 +10,7 @@ RED = (200, 100, 100)
 class Renderer:
 
     def __init__(self):
-        self.tiles = pygame.image.load('img/tiles.png')
+        self.tiles = pygame.image.load('img/tiles54.png')
         self.tiles = pygame.transform.scale2x(self.tiles)
         self.img_serail = self.load_image(0,0)
         self.img_garden = self.load_image(1,0)
@@ -25,7 +25,7 @@ class Renderer:
         self.img_wall_bottom = self.load_image(2, 2)
         self.img_wall_left = self.load_image(3, 2)
 
-        self.img_hud = pygame.image.load("img/hud.png")
+        self.img_hud = pygame.image.load("img/hud54.png")
 
         pygame.font.init()
         self.font = pygame.font.SysFont("Arial", 60)
@@ -55,7 +55,7 @@ class Renderer:
         if card.walls[3]:
             window.blit(self.img_wall_left, (x, y))
 
-    def render(self, window, world, shop, reserve, stats):
+    def render(self, window, game, world, shop, reserve, stats):
         x = 0
         for row in world.map:
             y = 0
@@ -63,25 +63,25 @@ class Renderer:
                 self.render_card(window, card, x, y)
                 y += 2*TILESIZE
             x += 2*TILESIZE
-        window.blit(self.img_hud, (896, 0))
+        window.blit(self.img_hud, (2*9*TILESIZE, 0))
 
         for i in range(0, 4):
-            self.render_card(window, shop.cards[i], 944+160*i, 100)
+            self.render_card(window, shop.cards[i], game.shop_slots[i].left, game.shop_slots[i].top)
             price = self.font.render(str(shop.prices[i]) + "€", True, GREEN if stats.money >= shop.prices[i] else RED)
-            window.blit(price, (960+160*i, 230))
+            window.blit(price, (game.shop_slots[i].left, game.shop_slots[i].top + TILESIZE + 60))
 
         for i in range(0, 4):
             if reserve.cards[i] is not None:
-                self.render_card(window, reserve.cards[i], 944 + 160 * i, 385)
+                self.render_card(window, reserve.cards[i], game.reserve_slots[i].left, game.reserve_slots[i].top)
 
         money = self.font.render(str(stats.money) + "€", True, GREEN)
-        window.blit(money, (960, 630))
+        window.blit(money, (1040, 630))
 
         day = self.font.render("Day " + str(stats.day), True, GREEN)
-        window.blit(day, (960, 690))
+        window.blit(day, (1040, 690))
 
         pride = self.font.render("Pride: " + str(stats.pride), True, GREEN)
-        window.blit(pride, (960, 750))
+        window.blit(pride, (1040, 750))
 
         joy = self.font.render("Joy: " + str(stats.joy), True, GREEN)
         window.blit(joy, (1300, 630))
