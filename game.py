@@ -5,6 +5,7 @@ from world import World
 from shop import Shop
 from stats import Stats
 import config
+import random
 
 
 class Game:
@@ -82,6 +83,7 @@ class Game:
                         if bought_card:
                             self.mode = Game.MODE_IDLE
                             self.stats.money -= self.card_in_placement_cost
+                            self.stats.pride += 3
                             self.next_turn()
 
     def next_turn(self):
@@ -90,3 +92,7 @@ class Game:
         self.stats.money += self.world.get_number_of_arkaden()
         self.stats.day += 1
         self.mode = Game.MODE_IDLE
+        self.world.update_riots()
+        if random.randint(1, 100) <= self.stats.pride:
+            self.world.spawn_riot()
+

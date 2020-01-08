@@ -19,6 +19,7 @@ class Renderer:
         self.img_arkaden = self.load_image(1, 1)
         self.img_empty = self.load_image(2, 1)
         self.img_empty_reserve = self.load_image(0, 3)
+        self.img_riot = self.load_image(1, 3)
 
         self.img_wall_top = self.load_image(0, 2)
         self.img_wall_right = self.load_image(1, 2)
@@ -64,6 +65,9 @@ class Renderer:
                 y += config.TILESIZE
             x += config.TILESIZE
         window.blit(self.img_hud, (config.HUD_LEFT, 0))
+
+        for riot in world.riots:
+            window.blit(self.img_riot, (config.TILESIZE*riot.x, config.TILESIZE*riot.y))
 
         for i in range(0, 4):
             self.render_card(window, shop.cards[i], game.shop_slots[i].left, game.shop_slots[i].top)
