@@ -1,7 +1,6 @@
 import pygame
 from card2 import Card
-
-TILESIZE = 56
+import config
 
 GREEN = (100, 200, 100)
 RED = (200, 100, 100)
@@ -12,15 +11,15 @@ class Renderer:
     def __init__(self):
         self.tiles = pygame.image.load('img/tiles54.png')
         self.tiles = pygame.transform.scale2x(self.tiles)
-        self.img_serail = self.load_image(0,0)
-        self.img_garden = self.load_image(1,0)
-        self.img_tower = self.load_image(2,0)
+        self.img_serail = self.load_image(0, 0)
+        self.img_garden = self.load_image(1, 0)
+        self.img_tower = self.load_image(2, 0)
         self.img_gemaecher = self.load_image(3, 0)
         self.img_pavillon = self.load_image(0, 1)
         self.img_arkaden = self.load_image(1, 1)
-        self.img_empty = self.load_image(2,1)
+        self.img_empty = self.load_image(2, 1)
 
-        self.img_wall_top = self.load_image(0,2)
+        self.img_wall_top = self.load_image(0, 2)
         self.img_wall_right = self.load_image(1, 2)
         self.img_wall_bottom = self.load_image(2, 2)
         self.img_wall_left = self.load_image(3, 2)
@@ -61,14 +60,14 @@ class Renderer:
             y = 0
             for card in row:
                 self.render_card(window, card, x, y)
-                y += 2*TILESIZE
-            x += 2*TILESIZE
-        window.blit(self.img_hud, (2*9*TILESIZE, 0))
+                y += config.TILESIZE
+            x += config.TILESIZE
+        window.blit(self.img_hud, (config.HUD_LEFT, 0))
 
         for i in range(0, 4):
             self.render_card(window, shop.cards[i], game.shop_slots[i].left, game.shop_slots[i].top)
             price = self.font.render(str(shop.prices[i]) + "€", True, GREEN if stats.money >= shop.prices[i] else RED)
-            window.blit(price, (game.shop_slots[i].left, game.shop_slots[i].top + TILESIZE + 60))
+            window.blit(price, (game.shop_slots[i].left, game.shop_slots[i].top + config.TILESIZE + 10))
 
         for i in range(0, 4):
             if reserve.cards[i] is not None:
@@ -90,6 +89,6 @@ class Renderer:
         window.blit(social, (1300, 690))
 
     def load_image(self, x, y):
-        img = pygame.Surface((TILESIZE * 2, TILESIZE * 2), pygame.SRCALPHA)
-        img.blit(self.tiles, (0, 0), (TILESIZE * 2 * x, TILESIZE * 2 * y, TILESIZE * 2, TILESIZE * 2))
+        img = pygame.Surface((config.TILESIZE, config.TILESIZE), pygame.SRCALPHA)
+        img.blit(self.tiles, (0, 0), (config.TILESIZE * x, config.TILESIZE * y, config.TILESIZE, config.TILESIZE))
         return img
