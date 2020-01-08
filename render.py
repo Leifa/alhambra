@@ -18,6 +18,7 @@ class Renderer:
         self.img_pavillon = self.load_image(0, 1)
         self.img_arkaden = self.load_image(1, 1)
         self.img_empty = self.load_image(2, 1)
+        self.img_empty_reserve = self.load_image(0, 3)
 
         self.img_wall_top = self.load_image(0, 2)
         self.img_wall_right = self.load_image(1, 2)
@@ -72,6 +73,8 @@ class Renderer:
         for i in range(0, 4):
             if reserve.cards[i] is not None:
                 self.render_card(window, reserve.cards[i], game.reserve_slots[i].left, game.reserve_slots[i].top)
+            else:
+                window.blit(self.img_empty_reserve, (game.reserve_slots[i].left, game.reserve_slots[i].top))
 
         money = self.font.render(str(stats.money) + "€", True, GREEN)
         window.blit(money, (1040, 630))
