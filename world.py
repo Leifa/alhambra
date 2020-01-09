@@ -76,11 +76,9 @@ class World:
         self.riots.append(riot)
 
     def update_riots(self):
+        self.riots = [riot for riot in self.riots if riot.health > 0]
         for riot in self.riots:
-            if riot.health == 0:
-                self.riots.remove(riot)
-            else:
-                riot.move(self)
+            riot.move(self)
 
     def can_move_riot_to(self, riot, pos):
         goal_x = pos[0]
