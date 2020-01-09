@@ -62,6 +62,8 @@ class Renderer:
             y = 0
             for card in row:
                 self.render_card(window, card, x, y)
+                #dist = self.font.render(str(world.distance_to_palace_map[x // config.TILESIZE][y // config.TILESIZE]), True, RED)
+                #window.blit(dist, (x, y))
                 y += config.TILESIZE
             x += config.TILESIZE
         window.blit(self.img_hud, (config.HUD_LEFT, 0))

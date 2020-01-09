@@ -92,6 +92,7 @@ class Game:
         self.stats.money += self.world.get_number_of_arkaden()
         self.stats.day += 1
         self.mode = Game.MODE_IDLE
+        self.world.calculate_distance_to_palace_map()
         self.world.update_riots()
         if random.randint(1, 100) <= self.stats.pride:
             self.world.spawn_riot()
